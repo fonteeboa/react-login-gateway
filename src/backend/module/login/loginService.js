@@ -1,3 +1,6 @@
+const DataBaseService = require('../helpers/dataBase');
+const dataBaseService = new DataBaseService();
+
 class LoginService {
   getRandomNumber() {
     return Math.floor(Math.random() * 3) + 1;

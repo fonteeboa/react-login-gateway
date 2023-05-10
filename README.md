@@ -10,6 +10,7 @@ Faça o clone deste repositório e instale as dependências:
 ´´´
 $ npm install
 ´´´
+
 Execute o projeto:
 ´´´
 $ npm start
@@ -17,6 +18,11 @@ $ npm start
 (Com isso o npm irá executar tanto o react, quanto o server express.)
 Abra o navegador e acesse o endereço http://localhost:3000.
 
+Usuario inicial
+´´´
+login: system@admin
+senha: adminpassword
+´´´
 
 # Algumas das tecnologias utilizadas
  - React

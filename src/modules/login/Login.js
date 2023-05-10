@@ -39,7 +39,8 @@ class Login extends Component {
           break;
         default:
           msg = intl.formatMessage({ id: "common.error" })
-          break;          
+          console.log(response.error);
+          break;
         }
       return message.error(msg)
     }
