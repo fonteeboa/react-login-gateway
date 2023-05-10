@@ -5,6 +5,7 @@ import { Form, Input, Button, Select, Card } from "antd"
 import { FlagIcon } from 'react-flag-kit'
 import { postService } from '../helpers/requests'
 import { message } from 'antd';
+import CryptoJS from 'crypto-js';
 
 class Login extends Component {
 
@@ -15,9 +16,11 @@ class Login extends Component {
     }
   }
 
-  handleLogin = async (values) => {
+  handleLogin = async (values) => {    
     const { intl } = this.props
     this.setState({ loading: true })
+    // Criptografa os dados usando SHA-512
+    values['password'] = CryptoJS.SHA512(values['password']).toString();
     const response = await postService('/login', values)
     this.setState({ loading: false })
     if (response.success) {
