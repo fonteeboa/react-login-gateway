@@ -27,14 +27,6 @@ db.run(`CREATE TABLE IF NOT EXISTS users (
     password TEXT NOT NULL
 )`);
 
-// Cria a tabela "usuarios" no banco de dados, se ela não existir
-db.run(`CREATE TABLE IF NOT EXISTS users (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT NOT NULL,
-  email TEXT NOT NULL UNIQUE,
-  password TEXT NOT NULL
-)`);
-
 // Verifica se a tabela "users" está vazia
 db.get("SELECT COUNT(*) as count FROM users", [], (err, row) => {
   if (err) {
