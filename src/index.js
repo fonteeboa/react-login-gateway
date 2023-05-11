@@ -4,12 +4,13 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { injectIntl, IntlProvider } from "react-intl";
 // css
-import './css/login.css';
-import './css/index.css';
+import './frontend/css/login.css';
+import './frontend/css/index.css';
 // modules
-import Login from './modules/login/Login';
+import Login from './frontend/modules/login/Login';
+import Dashboard from './frontend/modules/dashboard/Dashboard';
 // languages
-import i18n from './i18n';
+import i18n from './frontend/i18n';
 
 class ReactApp extends Component {
   constructor(props) {
@@ -29,10 +30,7 @@ class ReactApp extends Component {
 
   handleChangeLang = (lang) => {
     if (lang) {
-      if (!this.state.allLanguages.includes(lang)) {
-        lang = 'pt_BR';
-      }
-
+      if (!this.state.allLanguages.includes(lang)) lang = 'pt_BR';
       this.setState({ 
         language: lang.replace('_', '-'),
         messages: i18n[lang]
@@ -48,10 +46,11 @@ class ReactApp extends Component {
         <IntlProvider locale={language} messages={messages}>
           <BrowserRouter>
             <Switch>
-              <Route path={["/"]} render={() => <Login handleChangeLang={this.handleChangeLang} allLanguages={allLanguages} language={language}/>}/>
+              <Route exact path="/" render={() => <Login handleChangeLang={this.handleChangeLang} allLanguages={allLanguages} language={language}/>}/>
+              <Route exact path="/dashboard" render={() => <Dashboard language={language}/>}/>
             </Switch>
           </BrowserRouter>
-          </IntlProvider>
+        </IntlProvider>
       </div>
     );
   }

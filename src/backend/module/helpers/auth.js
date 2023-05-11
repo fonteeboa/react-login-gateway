@@ -42,14 +42,23 @@ class AuthBaseService {
     const cookieStr = cookie.serialize('token', token, options);
     // Define o cookie na resposta HTTP
     res.setHeader('Set-Cookie', cookieStr);
-      /*
-      //erro 4
-      case 4:
-      msg = intl.formatMessage({ id: "common.user.not.auth" })
-      break;   
-      */
+    return token;
   }
 
+  verifyAuthToken(req) {    
+    const authHeader = req.headers.authorization;
+    if (!authHeader) return false;
+    // Faz a validação do token de autenticação
+    const token = authHeader.split(' ')[1];
+    try {
+      const decoded = jwt.verify(token, secretKey);
+      req.user = decoded;
+      return true;
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
+  }
 
 }
 

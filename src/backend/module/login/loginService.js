@@ -4,9 +4,9 @@ const AuthBaseService = require('@helpersBackend/auth');
 const authBaseService = new AuthBaseService();
 
 class LoginService {
-  async validateLogin(reqBody, res) {
+  async validateLogin(reqData, res) {
     // separando dados da requisicao
-    const reqData = reqBody['data'];
+    //const reqData = reqBody['data'];
     const login = await authBaseService.sanitaze(reqData['email']);
     const password = await authBaseService.sanitaze(reqData['password']);
     // gerando hash criptografada da senha
@@ -20,9 +20,9 @@ class LoginService {
     const validUserAndPassword = await authBaseService.verifyPassword(password, passwordInDb);
     if (!validUserAndPassword) return { error : 1};
     // caso tudo esta ok, gera e seta o token no cookie da requisicao
-    await authBaseService.setToken(res, login);
+    let token = await authBaseService.setToken(res, login);
     // retorna sucesso
-    return { success: 1 };
+    return { success: token };
   }
 }
 

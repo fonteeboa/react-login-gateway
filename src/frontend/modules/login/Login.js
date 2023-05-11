@@ -4,15 +4,27 @@ import { injectIntl, FormattedMessage } from "react-intl"
 import { Form, Input, Button, Select, Card } from "antd"
 import { FlagIcon } from 'react-flag-kit'
 import { postService } from '../helpers/requests'
+import { validAuthCookie } from '../helpers/init'
 import { message } from 'antd';
+import { Redirect } from 'react-router-dom';
 
 class Login extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      loading: false
+      loading: false,
+      logged: false
     }
+  }
+
+  componentDidMount() {
+    this.validateCookie();
+  }
+
+  validateCookie = async () => {
+    let response = await validAuthCookie();
+    this.setState({ logged: response})
   }
 
   handleLogin = async (values) => {    
@@ -21,6 +33,8 @@ class Login extends Component {
     const response = await postService('/login', values)
     this.setState({ loading: false })
     if (response.success) {
+      this.setState({logged: true});
+      sessionStorage.setItem('authToken', response.success);
       return message.success(intl.formatMessage({ id: "login.success" }))
     } else {
       let msg = '';
@@ -48,7 +62,9 @@ class Login extends Component {
   }
 
   render() {
-    const { intl, allLanguages, loading, language } = this.props
+    const { intl, allLanguages, loading, language } = this.props;
+    const { logged } = this.state;
+    if (logged) {return <Redirect to="/dashboard" />}
 
     return (
       <div className="container">
