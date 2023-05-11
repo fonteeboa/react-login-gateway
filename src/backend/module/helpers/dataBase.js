@@ -1,56 +1,60 @@
+require('dotenv').config();
+const dbPath = process.env.DB_PATH;
 const sqlite3 = require('sqlite3').verbose();
+const successAction = 1;
 
 class dataBaseService {
-  constructor() {
-    this.db = new sqlite3.Database('../DB/dataBase.sqlite');
+  // Abre conexao com o banco
+  async OpenDBConnect() {
+    const db = new sqlite3.Database(dbPath, (err) => {
+      if (err) {
+        console.error(err.message);
+      }
+    });
+    return db;
   }
 
   // Retorna todos os usuários cadastrados no banco de dados
-  getData(fields = ['*'], filter = [''], table = '', callback) {
-    const sql = `SELECT ${fields.join()} FROM ${table} WHERE ${filter}`;
-    this.db.all(sql, (err, rows) => {
-      if (err) {
-      callback(err, null);
-      } else {
-      callback(null, rows);
-      }
-    });
+  async getData(table = '', fields = ['*'], filter = ['']) {
+    const dbConnection = await this.OpenDBConnect();
+    const sql = `SELECT ${fields.join(',')} FROM ${table} WHERE ${filter.join(' AND ')}`;
+    return new Promise((resolve, reject) => {
+      dbConnection.all(sql, (err, rows) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(rows);
+        }
+      });
+    });    
   }
 
   // Insere um novo usuário no banco de dados
-  insertData(fields = [''], values = [''], table = '', callback) {
+  async insertData(table = '', fields = [''], values = ['']) {
+    const dbConnection = this.OpenDBConnect();
     const sql = `INSERT INTO ${table} (${fields.join()}) VALUES (${values.join()})`;
-    this.db.all(sql, (err, rows) => {
-      if (err) {
-      callback(err, null);
-      } else {
-      callback(null, rows);
-      }
-    });
+    const err = await dbConnection.run(sql);
+    dbConnection.close();
+    return err ? err : successAction;
   }
 
   // Atualiza os dados de um usuário no banco de dados
-  updateData(fieldsWithvalues = [''], table = '', id, callback) {
-  const sql = `UPDATE ${table} SET ${fieldsWithvalues.join()} WHERE id = ${id}`;
-  this.db.run(sql, function(err) {
-    if (err) {
-    callback(err, null);
-    } else {
-    callback(null, this.changes);
-    }
-  });
+  async updateData(table = '', fieldsWithvalues = [''], id) {
+    const dbConnection = this.OpenDBConnect();
+    const sql = `UPDATE ${table} SET ${fieldsWithvalues.join()} WHERE id = ${id}`;
+    const err = await dbConnection.run(sql);
+    dbConnection.close();
+    return err ? err : successAction;
   }
 
   // Exclui um usuário do banco de dados
-  deleteData(id, table = '', callback) {
-    this.db.run(`DELETE FROM ${table} WHERE id = ${id}`, function(err) {
-      if (err) {
-        callback(err, null);
-      } else {
-        callback(null, this.changes);
-      }
-    });
+  async deleteData(table = '', id) {
+    const dbConnection = this.OpenDBConnect();
+    const sql = `DELETE FROM ${table} WHERE id = ${id}`;
+    const err = await dbConnection.run(sql);
+    dbConnection.close();
+    return err ? err : successAction;
   }
 }
-// Exporta um objeto que contém os métodos para manipulação do banco de dados
+
 module.exports = dataBaseService;

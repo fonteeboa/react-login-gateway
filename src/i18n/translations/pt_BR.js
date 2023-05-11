@@ -10,7 +10,10 @@ const pt_BR = {
   "login.password.invalid": "Senha inválida.",
   "login.user.invalid": "Usuário inválido.",
   "login.password.error": "Erro ao verificar senha.",
-  "login.success": "Login realizado com sucesso!"
+  "login.success": "Login realizado com sucesso!",
+  "common.user.not.auth" : "Usuário não autenticado.",
+  "common.to.much.requests" : "Muitas tentativas de login a partir deste IP. Tente novamente em 15 minutos.",
+    
 }
 
 export default pt_BR;

@@ -13,7 +13,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"node ./src/backend/server.js\" \" node ./src/backend/module/DB/initDataBase.js \" \"npm run start-react\"",
+    "start": "concurrently \" node ./src/backend/module/DB/initDataBase.js \" \"node ./src/backend/server.js\" \"npm run start-react\"",
     "start-react": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -41,10 +41,15 @@
   },
   "devDependencies": {
     "antd": "^5.4.6",
+    "argon2": "^0.30.3",
     "axios": "^1.4.0",
+    "body-parser": "^1.20.2",
     "concurrently": "^8.0.1",
     "cors": "^2.8.5",
-    "crypto-js": "^4.1.1",
+    "dotenv": "^16.0.3",
+    "express-rate-limit": "^6.7.0",
+    "jsonwebtoken": "^9.0.0",
+    "module-alias": "^2.2.2",
     "react-flag-kit": "^1.1.1",
     "react-i18next": "^12.2.2",
     "react-intl": "^6.4.2",

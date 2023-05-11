@@ -1,14 +1,28 @@
-const DataBaseService = require('../helpers/dataBase');
+const DataBaseService = require('@helpersBackend/dataBase');
 const dataBaseService = new DataBaseService();
+const AuthBaseService = require('@helpersBackend/auth');
+const authBaseService = new AuthBaseService();
 
 class LoginService {
-  getRandomNumber() {
-    return Math.floor(Math.random() * 3) + 1;
-  }
-
-  validateLogin() {
-    const randomNumber = this.getRandomNumber();
-    return randomNumber === 1 ? { success: randomNumber } : { error: randomNumber };
+  async validateLogin(reqBody, res) {
+    // separando dados da requisicao
+    const reqData = reqBody['data'];
+    const login = await authBaseService.sanitaze(reqData['email']);
+    const password = await authBaseService.sanitaze(reqData['password']);
+    // gerando hash criptografada da senha
+    //const hashPassword = await authBaseService.generateHashPassword(password);
+    if (password === '') return { error: 3 };
+    // verificando se o usuario passado existe no banco
+    const hasUser = await dataBaseService.getData('users', ['id', 'password'], [" email='"+ login + "'"])
+    if (Object.keys(hasUser).length === 0) return { error: 2 };
+    // verificando se o usuario e senha estao corretos
+    const passwordInDb = hasUser[0]['password'];
+    const validUserAndPassword = await authBaseService.verifyPassword(password, passwordInDb);
+    if (!validUserAndPassword) return { error : 1};
+    // caso tudo esta ok, gera e seta o token no cookie da requisicao
+    await authBaseService.setToken(res, login);
+    // retorna sucesso
+    return { success: 1 };
   }
 }
 
