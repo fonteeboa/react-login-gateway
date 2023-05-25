@@ -31,7 +31,7 @@ class dataBaseService {
 
   // Insere um novo usuário no banco de dados
   async insertData(table = '', fields = [''], values = ['']) {
-    const dbConnection = this.OpenDBConnect();
+    const dbConnection = await this.OpenDBConnect();
     const sql = `INSERT INTO ${table} (${fields.join()}) VALUES (${values.join()})`;
     const err = await dbConnection.run(sql);
     dbConnection.close();
@@ -39,18 +39,18 @@ class dataBaseService {
   }
 
   // Atualiza os dados de um usuário no banco de dados
-  async updateData(table = '', fieldsWithvalues = [''], id) {
+  async updateData(table = '', fieldsWithvalues = [''], filter = ['']) {
     const dbConnection = this.OpenDBConnect();
-    const sql = `UPDATE ${table} SET ${fieldsWithvalues.join()} WHERE id = ${id}`;
+    const sql = `UPDATE ${table} SET ${fieldsWithvalues.join()} WHERE ${filter.join(' AND ')}`;
     const err = await dbConnection.run(sql);
     dbConnection.close();
     return err ? err : successAction;
   }
 
   // Exclui um usuário do banco de dados
-  async deleteData(table = '', id) {
-    const dbConnection = this.OpenDBConnect();
-    const sql = `DELETE FROM ${table} WHERE id = ${id}`;
+  async deleteData(table = '', filter = ['']) {
+    const dbConnection = await this.OpenDBConnect();
+    const sql = `DELETE FROM ${table} WHERE ${filter.join(' AND ')}`;
     const err = await dbConnection.run(sql);
     dbConnection.close();
     return err ? err : successAction;

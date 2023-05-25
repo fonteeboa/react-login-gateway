@@ -1,16 +1,26 @@
 const fr_FR = {
-  "common.title": "Accédez à votre compte",
+  "common.title": "Connectez-vous à votre compte",
   "common.email": "E-mail",
   "common.password": "Mot de passe",
   "common.submit": "Se connecter",
-  "common.error": "Une erreur s'est produite, veuillez contacter l'administrateur du système !",  
-  "login.password.required": "Veuillez entrer votre mot de passe!",
-  "login.email.required": "Veuillez entrer votre adresse e-mail!",
-  "login.email.valid": "Veuillez entrer une adresse e-mail valide!",  
+  "common.error": "Une erreur s'est produite, veuillez contacter l'administrateur du système !",
+  "common.user.not.auth" : "Utilisateur non authentifié.",
+  "common.to.much.requests" : "Trop de tentatives de connexion à partir de cette adresse IP. Réessayez dans 15 minutes.",
+  "common.dashboard": "Tableau de bord",
+  "common.info": "Informations",
+  "common.advices": "Conseils",
+  "common.corona": "Coronavirus",
+  "common.settings": "Paramètres",
+  "common.admin": "Administrateur",
+  "common.logout": "Déconnexion",
+  "common.no.data": "Aucune donnée disponible",
+  "login.password.required": "Veuillez entrer votre mot de passe !",
+  "login.email.required": "Veuillez entrer votre adresse e-mail !",
+  "login.email.valid": "Veuillez entrer une adresse e-mail valide !",
   "login.password.invalid": "Mot de passe invalide.",
   "login.user.invalid": "Utilisateur invalide.",
   "login.password.error": "Erreur lors de la vérification du mot de passe.",
-  "login.success": "Connexion réussie !"  
-}
+  "login.success": "Connexion réussie !",
+};
 
 export default fr_FR;

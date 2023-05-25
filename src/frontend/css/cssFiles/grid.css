@@ -1,0 +1,9 @@
+.grid{
+    max-width: 96%;
+    width: 96% !important;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 3%;
+    max-height: 94%;
+    height: 94% !important;
+}

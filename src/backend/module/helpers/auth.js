@@ -3,6 +3,8 @@ const secretKey = process.env.SECRET_KEY;
 const argon2 = require('argon2');
 const cookie = require('cookie');
 const jwt = require('jsonwebtoken');
+const DataBaseService = require('@helpersBackend/dataBase');
+const dataBaseService = new DataBaseService();
 
 const hashOptions = {
   type: argon2.argon2d,
@@ -45,21 +47,59 @@ class AuthBaseService {
     return token;
   }
 
-  verifyAuthToken(req) {    
+  async verifyAuthToken(req) {
     const authHeader = req.headers.authorization;
     if (!authHeader) return false;
     // Faz a validação do token de autenticação
     const token = authHeader.split(' ')[1];
     try {
-      const decoded = jwt.verify(token, secretKey);
+      const decoded = await jwt.verify(token, secretKey);
       req.user = decoded;
-      return true;
+      // Verifica se o usuário já fez logout na tabela auth_users
+      return await this.checkUserLogout(decoded.email, token);
     } catch (err) {
-      console.log(err);
-      return false;
+      return false
     }
   }
+  
+  async checkUserLogout(userEmail,authHeader) {
+    // busca id do usuario
+    const userData = await dataBaseService.getData(
+      'users', 
+      ['id'], 
+      ['email = "' + userEmail + '"']
+    );
+    //verifica se possui logo de saida deste token
+    const hasUser = await dataBaseService.getData(
+      'auth_users', 
+      ['user_id'], 
+      ['user_id = ' + userData[0]['id'], "token = '" + authHeader + "'"]
+    );
+    return (Object.keys(hasUser).length === 0) ? true : false;
+  }
 
+  async logoutAuthToken (req) {
+    try {
+      const userToken = req.headers.authorization;
+      // Faz a validação do token de autenticação
+      const token = userToken.split(' ')[1];
+      const decoded = await jwt.verify(token, secretKey);
+      // Busca id do usuario
+      const hasUser = await dataBaseService.getData('users', ['id'], [" email='"+  decoded.email + "'"])
+      await dataBaseService.deleteData(
+        'auth_users', 
+        ['user_id = ' + hasUser[0]['id'], "token = '" + token + "'"]
+      )
+      // insere evento de saida
+      await dataBaseService.insertData(
+        'audit_log', ['user_id', 'event_type', 'token'], 
+        [ hasUser[0]['id'], '"logout"' , '"' + token + '"']
+      )
+      return true;
+    } catch (err) {
+      return false;
+    }
+  };
 }
 
 module.exports = AuthBaseService;

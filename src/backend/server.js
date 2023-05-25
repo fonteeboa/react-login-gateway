@@ -5,8 +5,6 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-require('dotenv').config();
-const secretKey = process.env.SECRET_KEY;
 // Auth service file
 const AuthBaseService = require('@helpersBackend/auth');
 const authBaseService = new AuthBaseService();
@@ -15,12 +13,18 @@ const authBaseService = new AuthBaseService();
 const LoginService = require('@loginBackend/loginService.js');
 const loginService = new LoginService();
 
-
 // Middleware para validar o token JWT no header Authorization Bearer
-const validateAuthToken = (req, res, next) => {
-  if (req.path === '/login') return next();
-  let respAuth = authBaseService.verifyAuthToken(req);
-  respAuth ? next() : res.status(401).json({ error: '4' });
+const validateAuthToken = async (req, res, next) => {
+  switch (req.path) {
+    case '/login': 
+      return next();
+    case '/logout':
+      let respLogout = await authBaseService.logoutAuthToken(req);
+      return respLogout ? next() : res.status(401).json({ error: '4' });
+    default:
+      let respAuth = await authBaseService.verifyAuthToken(req);
+      respAuth ? next() : res.status(401).json({ error: '4' });
+  }
 };
 
 // Configura o header
@@ -61,6 +65,11 @@ app.post('/login', limiter, cors(), async (req, res) => {
 // rota de initAuth
 app.post('/initAuth', cors(), async (req, res) => {
   res.json({ok : 1});
+});
+
+// rota de initAuth
+app.post('/logout', cors(), async (req, res) => {
+  res.json({success : 1});
 });
 
 // porta do backend

@@ -49,6 +49,34 @@ db.run(`
   }
 });
 
+// Cria a tabela "audit_log" no banco de dados, se ela não existir
+db.run(`
+  CREATE TABLE IF NOT EXISTS audit_log (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INT,
+    event_type VARCHAR(50),
+    event_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    token VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+  );
+`, function(err) {
+  if (err) {
+    console.error(err.message);
+  }
+});
+
+// Cria a tabela "audit_log" no banco de dados, se ela não existir
+db.run(`
+  CREATE TABLE IF NOT EXISTS auth_users (
+    user_id INT,
+    token VARCHAR(255)
+  );
+`, function(err) {
+  if (err) {
+    console.error(err.message);
+  }
+});
+
 // Fecha a conexão com o banco de dados
 db.close((err) => {
     if (err) {

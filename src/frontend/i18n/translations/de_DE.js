@@ -1,16 +1,26 @@
 const de_DE = {
-  "common.title": "Greifen Sie auf Ihr Konto zu",
+  "common.title": "Melden Sie sich in Ihrem Konto an",
   "common.email": "E-Mail",
   "common.password": "Passwort",
-  "common.submit": "Einreichen",
-  "common.error": "Es ist ein Fehler aufgetreten. Bitte kontaktieren Sie den Systemadministrator!",
+  "common.submit": "Anmelden",
+  "common.error": "Es ist ein Fehler aufgetreten. Bitte wenden Sie sich an den Systemadministrator!",
+  "common.user.not.auth" : "Nicht authentifizierter Benutzer.",
+  "common.to.much.requests" : "Zu viele Anmeldeversuche von dieser IP-Adresse. Bitte versuchen Sie es in 15 Minuten erneut.",
+  "common.dashboard": "Dashboard",
+  "common.info": "Informationen",
+  "common.advices": "Ratschläge",
+  "common.corona": "Coronavirus",
+  "common.settings": "Einstellungen",
+  "common.admin": "Administrator",
+  "common.logout": "Abmelden",
+  "common.no.data": "Keine Daten verfügbar",
   "login.password.required": "Bitte geben Sie Ihr Passwort ein!",
   "login.email.required": "Bitte geben Sie Ihre E-Mail-Adresse ein!",
   "login.email.valid": "Bitte geben Sie eine gültige E-Mail-Adresse ein!",
   "login.password.invalid": "Ungültiges Passwort.",
   "login.user.invalid": "Ungültiger Benutzer.",
   "login.password.error": "Fehler beim Überprüfen des Passworts.",
-  "login.success": "Anmeldung erfolgreich!"
-}
+  "login.success": "Anmeldung erfolgreich!",
+};
 
 export default de_DE;

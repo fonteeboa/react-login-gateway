@@ -21,6 +21,11 @@ class LoginService {
     if (!validUserAndPassword) return { error : 1};
     // caso tudo esta ok, gera e seta o token no cookie da requisicao
     let token = await authBaseService.setToken(res, login);
+    // auditoria
+    await dataBaseService.insertData(
+      'audit_log', ['user_id', 'event_type', 'token'], 
+      [ hasUser[0]['id'], '"login"' , '"' + token + '"']
+    )    
     // retorna sucesso
     return { success: token };
   }

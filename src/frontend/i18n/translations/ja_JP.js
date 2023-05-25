@@ -3,14 +3,24 @@ const ja_JP = {
   "common.email": "メールアドレス",
   "common.password": "パスワード",
   "common.submit": "ログイン",
-  "common.error": "エラーが発生しました。システム管理者に連絡してください。",
-  "login.password.required": "パスワードを入力してください！",
-  "login.email.required": "メールアドレスを入力してください！",
-  "login.email.valid": "有効なメールアドレスを入力してください！",
-  "login.password.invalid": "パスワードが無効です。",
-  "login.user.invalid": "ユーザーが無効です。",
-  "login.password.error": "パスワードの確認中にエラーが発生しました。",
-  "login.success": "ログインに成功しました！"
+  "common.error": "エラーが発生しました。システム管理者にお問い合わせください。",
+  "common.user.not.auth" : "ユーザーは認証されていません。",
+  "common.to.much.requests" : "このIPからのログイン試行が多すぎます。15分後に再試行してください。",
+  "common.dashboard": "ダッシュボード",
+  "common.info": "情報",
+  "common.advices": "アドバイス",
+  "common.corona": "コロナウイルス",
+  "common.settings": "設定",
+  "common.admin": "管理者",
+  "common.logout": "ログアウト",
+  "common.no.data": "データがありません",
+  "login.password.required": "パスワードを入力してください。",
+  "login.email.required": "メールアドレスを入力してください。",
+  "login.email.valid": "有効なメールアドレスを入力してください。",
+  "login.password.invalid": "無効なパスワードです。",
+  "login.user.invalid": "無効なユーザーです。",
+  "login.password.error": "パスワードの検証中にエラーが発生しました。",
+  "login.success": "ログインが成功しました！",
 };
-  
+
 export default ja_JP;

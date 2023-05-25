@@ -4,13 +4,15 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { injectIntl, IntlProvider } from "react-intl";
 // css
-import './frontend/css/login.css';
-import './frontend/css/index.css';
+import { importCSS } from './frontend/css/cssImports';
 // modules
 import Login from './frontend/modules/login/Login';
 import Dashboard from './frontend/modules/dashboard/Dashboard';
+import Logout from './frontend/modules/admin/logout';
 // languages
 import i18n from './frontend/i18n';
+
+importCSS();
 
 class ReactApp extends Component {
   constructor(props) {
@@ -48,6 +50,10 @@ class ReactApp extends Component {
             <Switch>
               <Route exact path="/" render={() => <Login handleChangeLang={this.handleChangeLang} allLanguages={allLanguages} language={language}/>}/>
               <Route exact path="/dashboard" render={() => <Dashboard language={language}/>}/>
+              <Route exact path="/info/advices" render={() => <Dashboard language={language}/>}/>
+              <Route exact path="/info/coronavirus" render={() => <Dashboard language={language}/>}/>
+              <Route exact path="/admin" render={() => <Dashboard language={language}/>}/>
+              <Route exact path="/logout" render={() => <Logout language={language} />}/>
             </Switch>
           </BrowserRouter>
         </IntlProvider>

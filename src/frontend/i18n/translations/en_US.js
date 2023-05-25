@@ -1,16 +1,26 @@
 const en_US = {
-  "common.title": "Access your account",
+  "common.title": "Access Your Account",
   "common.email": "Email",
   "common.password": "Password",
-  "common.submit": "Submit",
-  "common.error": "An error occurred, please contact the system administrator!",  
-  "login.password.required": "Please input your password!",
-  "login.email.required": "Please input your email!",
-  "login.email.valid": "Please input a valid email!",
+  "common.submit": "Sign In",
+  "common.error": "An error occurred, please contact the system administrator!",
+  "common.user.not.auth" : "User not authenticated.",
+  "common.to.much.requests" : "Too many login attempts from this IP. Please try again in 15 minutes.",
+  "common.dashboard": "Dashboard",
+  "common.info": "Info",
+  "common.advices": "Advices",
+  "common.corona": "Coronavirus",
+  "common.settings": "Settings",
+  "common.admin": "Admin",
+  "common.logout": "Logout",
+  "common.no.data": "No data available",
+  "login.password.required": "Please enter your password!",
+  "login.email.required": "Please enter your email!",
+  "login.email.valid": "Please enter a valid email address!",
   "login.password.invalid": "Invalid password.",
   "login.user.invalid": "Invalid user.",
   "login.password.error": "Error verifying password.",
-  "login.success": "Login successful!"
-}
+  "login.success": "Login successful!",
+};
 
 export default en_US;

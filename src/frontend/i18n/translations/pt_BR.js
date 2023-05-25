@@ -4,6 +4,16 @@ const pt_BR = {
   "common.password": "Senha",
   "common.submit": "Entrar",
   "common.error": "Ocorreu um erro, contate o administrador do sistema!",
+  "common.user.not.auth" : "Usuário não autenticado.",
+  "common.to.much.requests" : "Muitas tentativas de login a partir deste IP. Tente novamente em 15 minutos.",
+  "common.dashboard": "Painel de Controle",
+  "common.info": "Informações",
+  "common.advices": "Dicas",
+  "common.corona": "Coronavírus",
+  "common.settings": "Configurações",
+  "common.admin": "Administrador",
+  "common.logout": "Sair",
+  "common.no.data": "Não há dados disponíveis",
   "login.password.required": "Por favor, insira sua senha!",
   "login.email.required": "Por favor, insira seu e-mail!",
   "login.email.valid": "Por favor, insira um e-mail válido!",
@@ -11,9 +21,6 @@ const pt_BR = {
   "login.user.invalid": "Usuário inválido.",
   "login.password.error": "Erro ao verificar senha.",
   "login.success": "Login realizado com sucesso!",
-  "common.user.not.auth" : "Usuário não autenticado.",
-  "common.to.much.requests" : "Muitas tentativas de login a partir deste IP. Tente novamente em 15 minutos.",
-    
 }
 
 export default pt_BR;
