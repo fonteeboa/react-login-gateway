@@ -1,6 +1,5 @@
 const fr_FR = {
   "common.title": "Connectez-vous à votre compte",
-  "common.email": "E-mail",
   "common.password": "Mot de passe",
   "common.submit": "Se connecter",
   "common.error": "Une erreur s'est produite, veuillez contacter l'administrateur du système !",
@@ -21,6 +20,26 @@ const fr_FR = {
   "login.user.invalid": "Utilisateur invalide.",
   "login.password.error": "Erreur lors de la vérification du mot de passe.",
   "login.success": "Connexion réussie !",
+  "logout.complete": "Processus de déconnexion terminé",
+  "common.loading": "Chargement...",
+  "common.noData": "Aucune donnée disponible",
+  "common.search": "Rechercher",
+  "common.email": "Email",
+  "common.name": "Nom",
+  "common.actions": "Actions",
+  "common.add": "Ajouter",
+  "edit.user": "Modifier l'utilisateur",
+  "add.user": "Ajouter un utilisateur",
+  "delete.user": "Supprimer l'utilisateur",
+  "common.event_type": "Type d'événement",
+  "common.event_date": "Date de l'événement",
+  "common.users": "Utilisateurs",
+  "common.audit": "Audit",
+  "login.try.no.password": "Veuillez entrer un mot de passe",
+  "login.attempt": "Tentative de connexion",
+  "login.attempt.wrong.password": "Tentative de mot de passe incorrecte",
+  "common.no.error": "Aucune erreur",
+  "common.error_log": "Journal des erreurs"  
 };
 
 export default fr_FR;

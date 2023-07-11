@@ -1,6 +1,5 @@
 const it_IT = {
   "common.title": "Accedi al tuo account",
-  "common.email": "Email",
   "common.password": "Password",
   "common.submit": "Accedi",
   "common.error": "Si è verificato un errore. Contatta l'amministratore di sistema!",
@@ -21,6 +20,26 @@ const it_IT = {
   "login.user.invalid": "Utente non valido.",
   "login.password.error": "Errore durante la verifica della password.",
   "login.success": "Accesso effettuato con successo!",
+  "logout.complete": "Processo di logout completato",
+  "common.loading": "Caricamento...",
+  "common.noData": "Nessun dato disponibile",
+  "common.search": "Cerca",
+  "common.email": "Email",
+  "common.name": "Nome",
+  "common.actions": "Azioni",
+  "common.add": "Aggiungi",
+  "edit.user": "Modifica utente",
+  "add.user": "Aggiungi utente",
+  "delete.user": "Elimina utente",
+  "common.event_type": "Tipo di evento",
+  "common.event_date": "Data evento",
+  "common.users": "Utenti",
+  "common.audit": "Revisione",
+  "login.try.no.password": "Per favore, inserisci una password",
+  "login.attempt": "Tentativo di accesso",
+  "login.attempt.wrong.password": "Tentativo di password errata",
+  "common.no.error": "Nessun errore",
+  "common.error_log": "Log degli errori"  
 };
 
 export default it_IT;

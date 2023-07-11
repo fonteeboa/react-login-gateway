@@ -1,16 +1,16 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:3001";
+const baseURL = "http://localhost:5542";
 
-const config = {
+let config = {
   headers: {
-    'Authorization': 'Bearer ' + sessionStorage.getItem('authToken'),
     'Content-Type': 'application/json',
     'Accept': 'application/json'
   }
 };
 
-export const getService = (route = '', body = {}, localUrl = true) => {
+export const getService = async (route = '', body = {}, localUrl = true) => {
+  config = await setTokenAuth(config, localUrl, route);
   let url = localUrl ? baseURL + route : route;
   return axios.get(url, {
     ...config,
@@ -19,11 +19,12 @@ export const getService = (route = '', body = {}, localUrl = true) => {
     return response.data;
   }).catch(error => {
     console.log(error);
-    return false;
+    return [];
   });
 };
 
-export const postService = (route = '', body = {}, localUrl = true) => {
+export const postService = async (route = '', body = {}, localUrl = true) => {
+  config = await setTokenAuth(config, localUrl, route);  
   let url = localUrl ? baseURL + route : route;
   return axios.post(url, body, config).then(response => {
     return response.data;
@@ -32,3 +33,11 @@ export const postService = (route = '', body = {}, localUrl = true) => {
     return false;
   });
 };
+
+
+const setTokenAuth = async (config, localUrl, route) => {
+  if (localUrl && route !== '/login') {
+    config.headers['Authorization'] = 'Bearer ' + await sessionStorage.getItem('authToken');
+  }
+  return config;
+} 

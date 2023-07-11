@@ -1,6 +1,5 @@
 const de_DE = {
   "common.title": "Melden Sie sich in Ihrem Konto an",
-  "common.email": "E-Mail",
   "common.password": "Passwort",
   "common.submit": "Anmelden",
   "common.error": "Es ist ein Fehler aufgetreten. Bitte wenden Sie sich an den Systemadministrator!",
@@ -14,6 +13,7 @@ const de_DE = {
   "common.admin": "Administrator",
   "common.logout": "Abmelden",
   "common.no.data": "Keine Daten verfügbar",
+  "common.loading": "Laden...",
   "login.password.required": "Bitte geben Sie Ihr Passwort ein!",
   "login.email.required": "Bitte geben Sie Ihre E-Mail-Adresse ein!",
   "login.email.valid": "Bitte geben Sie eine gültige E-Mail-Adresse ein!",
@@ -21,6 +21,25 @@ const de_DE = {
   "login.user.invalid": "Ungültiger Benutzer.",
   "login.password.error": "Fehler beim Überprüfen des Passworts.",
   "login.success": "Anmeldung erfolgreich!",
+  "logout.complete": "Abmeldeprozess abgeschlossen",
+  "common.noData": "Keine Daten verfügbar",
+  "common.search": "Suche",
+  "common.email": "E-Mail",
+  "common.name": "Name",
+  "common.actions": "Aktionen",
+  "common.add": "Hinzufügen",
+  "edit.user": "Benutzer bearbeiten",
+  "add.user": "Benutzer hinzufügen",
+  "delete.user": "Benutzer löschen",
+  "common.event_type": "Ereignisart",
+  "common.event_date": "Ereignisdatum",
+  "common.users": "Benutzer",
+  "common.audit": "Prüfung",
+  "login.try.no.password": "Bitte geben Sie ein Passwort ein",
+  "login.attempt": "Anmeldeversuch",
+  "login.attempt.wrong.password": "Falscher Passwortversuch",
+  "common.no.error": "Kein Fehler",
+  "common.error_log": "Fehlerprotokoll"  
 };
 
 export default de_DE;

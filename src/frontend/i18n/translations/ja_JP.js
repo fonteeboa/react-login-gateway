@@ -1,6 +1,5 @@
 const ja_JP = {
   "common.title": "アカウントにアクセス",
-  "common.email": "メールアドレス",
   "common.password": "パスワード",
   "common.submit": "ログイン",
   "common.error": "エラーが発生しました。システム管理者にお問い合わせください。",
@@ -21,6 +20,26 @@ const ja_JP = {
   "login.user.invalid": "無効なユーザーです。",
   "login.password.error": "パスワードの検証中にエラーが発生しました。",
   "login.success": "ログインが成功しました！",
+  "logout.complete": "ログアウトプロセスが完了しました",
+  "common.loading": "読み込み中...",
+  "common.noData": "データがありません",
+  "common.search": "検索",
+  "common.email": "メールアドレス",
+  "common.name": "名前",
+  "common.actions": "アクション",
+  "common.add": "追加",
+  "edit.user": "ユーザーを編集",
+  "add.user": "ユーザーを追加",
+  "delete.user": "ユーザーを削除",
+  "common.event_type": "イベントタイプ",
+  "common.event_date": "イベント日付",
+  "common.audit": "監査",
+  "common.users": "ユーザー",
+  "login.try.no.password": "パスワードを入力してください",
+  "login.attempt": "ログイン試行",
+  "login.attempt.wrong.password": "パスワードが間違っています",
+  "common.no.error": "エラーなし",
+  "common.error_log": "エラーログ"  
 };
 
 export default ja_JP;

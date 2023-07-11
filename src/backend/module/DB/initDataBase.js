@@ -57,6 +57,7 @@ db.run(`
     event_type VARCHAR(50),
     event_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     token VARCHAR(255),
+    error_log VARCHAR(255),
     FOREIGN KEY (user_id) REFERENCES users(id)
   );
 `, function(err) {

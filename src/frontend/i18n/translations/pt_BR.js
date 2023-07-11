@@ -1,6 +1,5 @@
 const pt_BR = {
   "common.title": "Acesse sua conta",
-  "common.email": "E-mail",
   "common.password": "Senha",
   "common.submit": "Entrar",
   "common.error": "Ocorreu um erro, contate o administrador do sistema!",
@@ -21,6 +20,26 @@ const pt_BR = {
   "login.user.invalid": "Usuário inválido.",
   "login.password.error": "Erro ao verificar senha.",
   "login.success": "Login realizado com sucesso!",
+  "logout.complete": "Processo de logout concluído",
+  "common.loading": "Carregando...",
+  "common.noData": "Nenhum dado disponível",
+  "common.search": "Buscar",
+  "common.email": "Email",
+  "common.name": "Nome",
+  "common.actions": "Ações",
+  "common.add": "Adicionar",
+  "edit.user": "Editar Usuário",
+  "add.user": "Adicionar Usuário",
+  "delete.user": "Excluir Usuário",
+  "common.event_type": "Tipo de Evento",
+  "common.event_date": "Data do Evento",
+  "common.audit": "Auditoria",
+  "common.users": "Usuários",
+  "login.try.no.password": "Por favor, insira uma senha",
+  "login.attempt": "Tentativa de login",
+  "login.attempt.wrong.password": "Tentativa de senha incorreta",
+  "common.no.error": "Nenhum erro",
+  "common.error_log": "Log de erros"  
 }
 
 export default pt_BR;

@@ -19,37 +19,37 @@ body {
   min-height: 100vh;
 }
 
-.pt-BR {
+.pt_BR {
   background: linear-gradient(0, rgb(69, 177, 175) 0%, rgb(186, 216, 211) 50%, rgb(255, 255, 255) 100%);
   border: 0px;
 }
 
-.en-US {
+.en_US {
   background: linear-gradient(0, rgb(88, 130, 196) 0%, rgb(198, 210, 238) 50%, rgb(255, 255, 255) 100%);
   border: 0px;
 }
 
-.es-ES {
+.es_ES {
   background: linear-gradient(0, rgb(252, 197, 119) 0%, rgb(243, 227, 191) 50%, rgb(255, 255, 255) 100%);
   border: 0px;
 }
 
-.fr-FR {
+.fr_FR {
   background: linear-gradient(0, rgb(69, 89, 177) 0%, rgb(216, 186, 186) 50%, rgb(255, 255, 255) 100%);
   border: 0px;
 }
 
-.de-DE {
+.de_DE {
   background: linear-gradient(0, #d15b5b 0%, #f0f1a0 100% );
   border: 0px;
 }
 
-.it-IT {
+.it_IT {
   background: linear-gradient(0, #009246, #FFFFFF);
   border: 0px;
 }
 
-.ja-JP {
+.ja_JP {
   background: linear-gradient(0, #be1616 0%, #e75757 35%, #FFFFFF 100% );
   border: 0px;
 }

@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom';
 import { injectIntl } from "react-intl"
 import { message } from 'antd';
 import { HashLoader } from "react-spinners";
-
 import { flagColors } from '../constants/constants';
 
 class LogoutPage extends Component {
@@ -37,16 +36,14 @@ class LogoutPage extends Component {
     } catch (error) {
       // Lógica de tratamento de erro aqui
       this.setState({ loading: false });
-      console.log('Erro ao fazer logout:', error);
       return message.error(intl.formatMessage({ id: "common.error" }))      
     }
   };
 
   render() {
     const { loading, logout} = this.state;
-    const { language } = this.props;
-    const hashColor = flagColors[language.replace('-', '_')] ? flagColors[language.replace('-', '_')] : '#ffffff';
-
+    const { language, intl} = this.props;
+    const hashColor = flagColors[language] ? flagColors[language] : '#ffffff';
     if (logout) {
       // Redirecionamento para a rota "/"
       return <Redirect to="/" />;
@@ -59,7 +56,7 @@ class LogoutPage extends Component {
           size={100}
           speedMultiplier={0.5}
         />
-        {loading ? <></> : <div>Logout process complete</div>}
+        {loading ? <></> : <div>{intl.formatMessage({ id:"logout.complete"})}</div>}
       </div>
     );
   }

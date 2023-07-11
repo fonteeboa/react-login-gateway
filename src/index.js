@@ -9,6 +9,9 @@ import { importCSS } from './frontend/css/cssImports';
 import Login from './frontend/modules/login/Login';
 import Dashboard from './frontend/modules/dashboard/Dashboard';
 import Logout from './frontend/modules/admin/logout';
+import Admin from './frontend/modules/admin/Admin';
+import CovidPortal from './frontend/modules/covid/Covid19';
+
 // languages
 import i18n from './frontend/i18n';
 
@@ -18,41 +21,43 @@ class ReactApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      language: 'pt-BR',
-      messages: i18n['pt_BR'],
+      language: sessionStorage.getItem('lang') || window.navigator.language.replace('-', '_') || 'pt_BR' ,
       allLanguages: Object.keys(i18n)
     };
   }
 
   componentDidMount() {
-    if (this.state.language === '') {
-      this.handleChangeLang('pt_BR');
+    if (this.state.language !== 'pt_BR') {
+      this.handleChangeLang(this.state.language);
     }
   }
 
   handleChangeLang = (lang) => {
     if (lang) {
       if (!this.state.allLanguages.includes(lang)) lang = 'pt_BR';
+      sessionStorage.setItem('lang', lang);
       this.setState({ 
-        language: lang.replace('_', '-'),
+        language: lang,
         messages: i18n[lang]
       });
     }
   }
 
   render() {
-    const { language, messages, allLanguages } = this.state;
+    const { language, allLanguages } = this.state;
+    const messages = i18n[language] || i18n['pt_BR'];
     let bodyClassName = "containerBody "+ language;
+
     return (
       <div className={bodyClassName}>
-        <IntlProvider locale={language} messages={messages}>
+        <IntlProvider locale={language.replace('_', '-')} messages={messages}>
           <BrowserRouter>
             <Switch>
               <Route exact path="/" render={() => <Login handleChangeLang={this.handleChangeLang} allLanguages={allLanguages} language={language}/>}/>
               <Route exact path="/dashboard" render={() => <Dashboard language={language}/>}/>
               <Route exact path="/info/advices" render={() => <Dashboard language={language}/>}/>
-              <Route exact path="/info/coronavirus" render={() => <Dashboard language={language}/>}/>
-              <Route exact path="/admin" render={() => <Dashboard language={language}/>}/>
+              <Route exact path="/info/coronavirus" render={() => <CovidPortal language={language}/>}/>
+              <Route exact path="/admin" render={() => <Admin language={language}/>}/>
               <Route exact path="/logout" render={() => <Logout language={language} />}/>
             </Switch>
           </BrowserRouter>

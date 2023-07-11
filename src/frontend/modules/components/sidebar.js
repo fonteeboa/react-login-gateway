@@ -49,9 +49,8 @@ class Sidebar extends React.Component {
 
   render() {
     const sidebarClass = this.state.collapsed ? 'sidebar collapsed' : 'sidebar buildup';
-
     return (
-      <div className={sidebarClass}>
+      <div className={sidebarClass + ' transition-all duration-200 ease-in justify-center items-center bg-[#223345]'}>
         <button className="toggle-btn" onClick={this.toggleMenu}>
           <FontAwesomeIcon
             icon={(this.state.collapsed ? faAngleRight : faAngleLeft)}

@@ -50,7 +50,6 @@ class Login extends Component {
           break;
         default:
           msg = intl.formatMessage({ id: "common.error" })
-          console.log(response.error);
           break;
         }
       return message.error(msg)
@@ -98,7 +97,7 @@ class Login extends Component {
               <Button type="primary" htmlType="submit" disabled={loading} className={language + " letter"}>
                 {intl.formatMessage({ id:"common.submit"})}
               </Button>
-              <Select className="select-flag" defaultValue="pt_BR" onChange={this.handleLanguageChange}>
+              <Select className="select-flag" defaultValue={language} onChange={this.handleLanguageChange}>
                 { allLanguages.map((value, key)=>(
                   <Select.Option key={value+key} value={value}>
                     <FlagIcon code={value.split('_')[1]} />

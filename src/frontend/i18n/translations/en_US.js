@@ -1,6 +1,5 @@
 const en_US = {
   "common.title": "Access Your Account",
-  "common.email": "Email",
   "common.password": "Password",
   "common.submit": "Sign In",
   "common.error": "An error occurred, please contact the system administrator!",
@@ -21,6 +20,26 @@ const en_US = {
   "login.user.invalid": "Invalid user.",
   "login.password.error": "Error verifying password.",
   "login.success": "Login successful!",
+  "logout.complete": "Logout process complete",
+  "common.loading": "Loading...",
+  "common.noData": "No data available",
+  "common.search": "Search",
+  "common.email": "Email",
+  "common.name": "Name",
+  "common.actions": "Actions",
+  "common.add": "Add",
+  "edit.user": "Edit User",
+  "add.user": "Add User",
+  "delete.user": "Delete User",
+  "common.event_type": "Event Type",
+  "common.event_date": "Event Date",
+  "common.audit": "Audit",
+  "common.users": "Users",
+  "login.try.no.password": "Please enter a password",
+  "login.attempt": "Login attempt",
+  "login.attempt.wrong.password": "Wrong password attempt",  
+  "common.no.error": "No error",
+  "common.error_log": "Error log"  
 };
 
 export default en_US;

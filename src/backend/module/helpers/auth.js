@@ -56,19 +56,20 @@ class AuthBaseService {
       const decoded = await jwt.verify(token, secretKey);
       req.user = decoded;
       // Verifica se o usuário já fez logout na tabela auth_users
-      return await this.checkUserLogout(decoded.email, token);
+      return await this.checkUserLogout(decoded.email, token, req);
     } catch (err) {
-      return false
+      return false;
     }
   }
   
-  async checkUserLogout(userEmail,authHeader) {
+  async checkUserLogout(userEmail,authHeader, req) {
     // busca id do usuario
     const userData = await dataBaseService.getData(
       'users', 
       ['id'], 
       ['email = "' + userEmail + '"']
     );
+    req.body.adminId = userData[0]['id'];
     //verifica se possui logo de saida deste token
     const hasUser = await dataBaseService.getData(
       'auth_users', 
@@ -93,7 +94,7 @@ class AuthBaseService {
       // insere evento de saida
       await dataBaseService.insertData(
         'audit_log', ['user_id', 'event_type', 'token'], 
-        [ hasUser[0]['id'], '"logout"' , '"' + token + '"']
+        [ hasUser[0]['id'], '"logout"' , '"' + token + '"' , "error_log = " + '"common.no.error"']
       )
       return true;
     } catch (err) {

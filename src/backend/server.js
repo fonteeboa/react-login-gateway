@@ -13,6 +13,14 @@ const authBaseService = new AuthBaseService();
 const LoginService = require('@loginBackend/loginService.js');
 const loginService = new LoginService();
 
+// users service file
+const UsersService = require('@usersBackend/usersService.js');
+const usersService = new UsersService();
+
+// users service file
+const AuditService = require('@auditBackend/auditService.js');
+const auditService = new AuditService();
+
 // Middleware para validar o token JWT no header Authorization Bearer
 const validateAuthToken = async (req, res, next) => {
   switch (req.path) {
@@ -67,13 +75,37 @@ app.post('/initAuth', cors(), async (req, res) => {
   res.json({ok : 1});
 });
 
-// rota de initAuth
+// rota de logout
 app.post('/logout', cors(), async (req, res) => {
   res.json({success : 1});
 });
 
+// rota de users
+app.get('/users', cors(), async (req, res) => {
+  const usersData = await usersService.getUsers(req.body, res);
+  res.json(usersData);
+});
+
+// rota de addUser
+app.post('/addUser', cors(), async (req, res) => {
+  const usersData = await usersService.addEditUsers(req.body, res);
+  res.json(usersData);
+});
+
+// rota de deleteUser
+app.post('/deleteUser', cors(), async (req, res) => {
+  const usersData = await usersService.deleteUsers(req.body, res);
+  res.json(usersData);
+});
+
+// rota de audit
+app.get('/audit', cors(), async (req, res) => {
+  const auditData = await auditService.getAudit(req.body, res);
+  res.json(auditData);
+});
+
 // porta do backend
-const port = process.env.PORT || 3001;
+const port = process.env.PORT_BACKEND || 3001;
 
 // retorno ao subir o mini server
 app.listen(port, () => {
