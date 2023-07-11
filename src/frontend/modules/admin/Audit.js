@@ -26,9 +26,8 @@ class Audit extends Component {
         this.setState({ loading: true })
         const response = await getService('/audit')
 
-        response.map(item => {
-            return item.event_type = intl.formatMessage({ id: item.event_type })
-        })
+        response.map(item => { return item.event_type = intl.formatMessage({ id: item.event_type }) });
+        response.map(item => { return item.error_log = intl.formatMessage({ id: item.error_log.replace('"','').replace('"','') }) });
         
         this.setState({ loading: false, dataSource: response })
     }

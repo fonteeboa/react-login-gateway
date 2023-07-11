@@ -39,7 +39,9 @@ const en_US = {
   "login.attempt": "Login attempt",
   "login.attempt.wrong.password": "Wrong password attempt",  
   "common.no.error": "No error",
-  "common.error_log": "Error log"  
+  "common.error_log": "Error log",
+  "common.edit": "Edit",
+  "common.delete": "Delete",
 };
 
 export default en_US;

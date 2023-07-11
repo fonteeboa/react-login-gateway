@@ -153,8 +153,8 @@ class Users extends Component {
             key: 'actions',
             render: (text, record) => (
               <>
-                <Button className="customButtonAction" onClick={() => this.handleEditUser(record.id)}>Editar</Button>
-                <Button className="customButtonAction" onClick={() => this.handleDeleteUser(record.id)}>Excluir</Button>
+                <Button className="customButtonAction" onClick={() => this.handleEditUser(record.id)}>{intl.formatMessage({ id: "common.edit" })}</Button>
+                <Button className="customButtonAction" onClick={() => this.handleDeleteUser(record.id)}>{intl.formatMessage({ id: "common.delete" })}</Button>
               </>
             )
           }

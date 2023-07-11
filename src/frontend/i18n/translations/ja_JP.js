@@ -39,7 +39,9 @@ const ja_JP = {
   "login.attempt": "ログイン試行",
   "login.attempt.wrong.password": "パスワードが間違っています",
   "common.no.error": "エラーなし",
-  "common.error_log": "エラーログ"  
+  "common.error_log": "エラーログ",
+  "common.edit": "編集",
+  "common.delete": "削除",
 };
 
 export default ja_JP;

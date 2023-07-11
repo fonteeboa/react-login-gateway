@@ -39,7 +39,9 @@ const fr_FR = {
   "login.attempt": "Tentative de connexion",
   "login.attempt.wrong.password": "Tentative de mot de passe incorrecte",
   "common.no.error": "Aucune erreur",
-  "common.error_log": "Journal des erreurs"  
+  "common.error_log": "Journal des erreurs",
+  "common.edit": "Modifier",
+  "common.delete": "Supprimer",
 };
 
 export default fr_FR;

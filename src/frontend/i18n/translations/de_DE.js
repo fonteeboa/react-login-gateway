@@ -10,7 +10,6 @@ const de_DE = {
   "common.advices": "Ratschläge",
   "common.corona": "Coronavirus",
   "common.settings": "Einstellungen",
-  "common.admin": "Administrator",
   "common.logout": "Abmelden",
   "common.no.data": "Keine Daten verfügbar",
   "common.loading": "Laden...",
@@ -24,8 +23,6 @@ const de_DE = {
   "logout.complete": "Abmeldeprozess abgeschlossen",
   "common.noData": "Keine Daten verfügbar",
   "common.search": "Suche",
-  "common.email": "E-Mail",
-  "common.name": "Name",
   "common.actions": "Aktionen",
   "common.add": "Hinzufügen",
   "edit.user": "Benutzer bearbeiten",
@@ -39,7 +36,12 @@ const de_DE = {
   "login.attempt": "Anmeldeversuch",
   "login.attempt.wrong.password": "Falscher Passwortversuch",
   "common.no.error": "Kein Fehler",
-  "common.error_log": "Fehlerprotokoll"  
+  "common.error_log": "Fehlerprotokoll",
+  "common.edit": "Bearbeiten",
+  "common.email": "E-Mail",
+  "common.admin": "Administrator",
+  "common.name": "Name",
+  "common.delete": "Löschen"
 };
 
 export default de_DE;

@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     height: 100vh;
-    width: 250px;
+    width: 197px;
     z-index: 9999;
     transition: left 0.3s ease-in-out;
     justify-content: center;
@@ -12,7 +12,7 @@
   }
   
   .sidebar.collapsed {
-    left: -250px;
+    left: -197px;
   }
   
   .sidebar.buildup {
@@ -22,7 +22,7 @@
   .toggle-btn {
     position: absolute;
     top: 10px;
-    left: 250px;
+    left: 197px;
     padding: 8px;
     background-color: rgb(255, 255, 255);
     color: black;

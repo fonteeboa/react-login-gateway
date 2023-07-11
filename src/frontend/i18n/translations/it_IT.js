@@ -39,7 +39,9 @@ const it_IT = {
   "login.attempt": "Tentativo di accesso",
   "login.attempt.wrong.password": "Tentativo di password errata",
   "common.no.error": "Nessun errore",
-  "common.error_log": "Log degli errori"  
+  "common.error_log": "Log degli errori",
+  "common.edit": "Modifica",
+  "common.delete": "Elimina",
 };
 
 export default it_IT;

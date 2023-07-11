@@ -39,7 +39,9 @@ const pt_BR = {
   "login.attempt": "Tentativa de login",
   "login.attempt.wrong.password": "Tentativa de senha incorreta",
   "common.no.error": "Nenhum erro",
-  "common.error_log": "Log de erros"  
+  "common.error_log": "Log de erros",
+  "common.edit": "Editar",
+  "common.delete": "Excluir",
 }
 
 export default pt_BR;

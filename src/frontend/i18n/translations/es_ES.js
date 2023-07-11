@@ -39,7 +39,9 @@ const es_ES = {
   "login.attempt": "Intento de inicio de sesión",
   "login.attempt.wrong.password": "Intento de contraseña incorrecta",
   "common.no.error": "Sin error",
-  "common.error_log": "Registro de errores"  
+  "common.error_log": "Registro de errores",
+  "common.edit": "Editar",
+  "common.delete": "Eliminar",
 };
 
 export default es_ES;

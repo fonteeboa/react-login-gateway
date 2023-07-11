@@ -1,4 +1,4 @@
-import { faHome, faInfo, faCog, faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faCog, faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 export const menuItems = [
   {
@@ -6,14 +6,6 @@ export const menuItems = [
     icon: faHome,
     subMenu: [
       { label: 'common.dashboard', route: '/dashboard', icon: faHome },
-    ],
-  },
-  {
-    label: 'common.info',
-    icon: faInfo,
-    subMenu: [
-      { label: 'common.advices', route: '/info/advices', icon: faInfo },
-      { label: 'common.corona', route: '/info/coronavirus', icon: faInfo },
     ],
   },
   {

@@ -2,7 +2,6 @@
 import React, { Component } from "react"
 import { injectIntl } from "react-intl"
 import { validAuthCookie } from '../helpers/init'
-import { getService } from '../helpers/requests'
 //components
 import withSidebar from '../components/withSidebar';
 
@@ -17,7 +16,6 @@ class Dashboard extends Component {
 
   componentDidMount() {
     this.validateCookie();
-    this.fetchSourcePost();
   }
 
   validateCookie = async () => {
@@ -25,24 +23,11 @@ class Dashboard extends Component {
     this.setState({ logged: response})
   }  
 
-  fetchSourcePost = async () => {
-    const response = await getService('https://jsonplaceholder.typicode.com/todos', {}, false)
-    //this.setState({ dataSourcePosts: response })
-  }
-
   render() {
-    const { dataSourcePosts } = this.state;
     return (
-      <nav>
-        <div>
-          <ul>
-            {dataSourcePosts.map(item => (
-              <li key={item.id}>{item.title}</li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-    );
+      <div> 
+      </div>
+        );
   }
 }
 

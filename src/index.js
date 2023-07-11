@@ -10,8 +10,6 @@ import Login from './frontend/modules/login/Login';
 import Dashboard from './frontend/modules/dashboard/Dashboard';
 import Logout from './frontend/modules/admin/logout';
 import Admin from './frontend/modules/admin/Admin';
-import CovidPortal from './frontend/modules/covid/Covid19';
-
 // languages
 import i18n from './frontend/i18n';
 
@@ -55,8 +53,6 @@ class ReactApp extends Component {
             <Switch>
               <Route exact path="/" render={() => <Login handleChangeLang={this.handleChangeLang} allLanguages={allLanguages} language={language}/>}/>
               <Route exact path="/dashboard" render={() => <Dashboard language={language}/>}/>
-              <Route exact path="/info/advices" render={() => <Dashboard language={language}/>}/>
-              <Route exact path="/info/coronavirus" render={() => <CovidPortal language={language}/>}/>
               <Route exact path="/admin" render={() => <Admin language={language}/>}/>
               <Route exact path="/logout" render={() => <Logout language={language} />}/>
             </Switch>
