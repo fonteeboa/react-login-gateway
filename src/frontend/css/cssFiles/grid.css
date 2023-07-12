@@ -81,8 +81,8 @@
   /* Outras propriedades de estilo que você deseja aplicar aos botões */
 }
 
-.ant-btn:hover {
- 
+.top30 {
+  margin-top:30vh;
 } 
 
 .customButtonAction {

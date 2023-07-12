@@ -48,12 +48,12 @@ class Audit extends Component {
         ];
 
         return (
-            <>
-                {dataSource.length === 0 ? (
-                    <Empty description={intl.formatMessage({ id: "common.noData" })} />
-                ) : (
-                    <Fragment>
-                        <Col span={24} className="margintop6">
+            <Fragment>
+                <Col span={24} className="margintop6">
+                    {dataSource.length === 0 ? (
+                    <Empty className="top30 " description={intl.formatMessage({ id: "common.noData" })} />
+                    ) : (
+                        <>
                             <Input.Search
                                 placeholder={intl.formatMessage({ id: "common.search" })}
                                 size="medium"
@@ -72,10 +72,10 @@ class Audit extends Component {
                                 style={tableStyle}
                                 scroll={{ y: 700 }}
                             />
-                        </Col>
-                    </Fragment>
-                )}
-            </>
+                        </>
+                    )}
+                </Col>
+            </Fragment>
         );
     };
 }

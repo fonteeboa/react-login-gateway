@@ -159,13 +159,14 @@ class Users extends Component {
             )
           }
         ];
-    
+
         return (
           <>
             {dataSource.length === 0 ? (
-              <Empty description={intl.formatMessage({ id: "common.noData" })} />
+              <Empty className="top30 " description={intl.formatMessage({ id: "common.noData" })} />
             ) : (
             <Col span={24} className="margintop6">
+                
                 <Row gutter={[16, 8]}>
                     <Col flex="auto">
                         <Input.Search
