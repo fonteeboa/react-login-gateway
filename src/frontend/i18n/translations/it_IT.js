@@ -50,7 +50,9 @@ const it_IT = {
   "dashboard.about.strong" : "Qui puoi gestire l'accesso degli utenti:",
   "dashboard.about" : "Effettua il login, il logout e gestisci gli account degli utenti. Il sistema registra tutte le attività, inclusi i tentativi di accesso, per fini di audit.",
   "dashboard.welcome" : "Benvenuto al Sistema di Accesso",
-  "dashboard.about.project" : "Informazioni sul Progetto"
+  "dashboard.about.project" : "Informazioni sul Progetto",
+  'common.github' : "GitHub",
+  'common.linkedin' : "LinkedIn",
   
 };
 

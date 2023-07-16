@@ -50,7 +50,9 @@ const en_US = {
   "dashboard.about.strong" : "Here you can manage user access:",
   "dashboard.about" : "Perform login and logout, control user accounts. The system audits system activities, including login attempts.",
   "dashboard.welcome" : "Welcome to the Login System",
-  "dashboard.about.project" : "About the Project"
+  "dashboard.about.project" : "About the Project",
+  'common.github' : "GitHub",
+  'common.linkedin' : "LinkedIn",
   
 };
 

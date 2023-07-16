@@ -50,7 +50,9 @@ const de_DE = {
   "dashboard.about.strong" : "Hier können Sie den Benutzerzugriff verwalten:",
   "dashboard.about" : "Melden Sie sich an und ab, kontrollieren Sie Benutzerkonten. Das System protokolliert alle Aktivitäten, einschließlich Anmeldeversuche, zu Auditierungszwecken.",
   "dashboard.welcome" : "Willkommen im Anmeldesystem",
-  "dashboard.about.project" : "Über das Projekt"
+  "dashboard.about.project" : "Über das Projekt",
+  'common.github' : "GitHub",
+  'common.linkedin' : "LinkedIn",
   
 };
 

@@ -50,7 +50,9 @@ const fr_FR = {
   "dashboard.about.strong" : "Vous pouvez gérer l'accès des utilisateurs :",
   "dashboard.about" : "Connectez-vous, déconnectez-vous et gérez les comptes utilisateur. Le système enregistre toutes les activités, y compris les tentatives de connexion, à des fins d'audit.",
   "dashboard.welcome" : "Bienvenue dans le système de connexion",
-  "dashboard.about.project" : "À propos du projet"
+  "dashboard.about.project" : "À propos du projet",
+  'common.github' : "GitHub",
+  'common.linkedin' : "LinkedIn",
   
 };
 

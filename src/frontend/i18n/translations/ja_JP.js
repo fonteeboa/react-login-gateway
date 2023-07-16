@@ -50,7 +50,9 @@ const ja_JP = {
   "dashboard.about.strong" : "ユーザーアクセスを管理できます：",
   "dashboard.about" : "ログイン、ログアウト、ユーザーアカウントの管理。システムは、ログイン試行を含むすべてのアクティビティを監査します。",
   "dashboard.welcome" : "ログインシステムへようこそ",
-  "dashboard.about.project" : "プロジェクトについて"
+  "dashboard.about.project" : "プロジェクトについて",
+  'common.github' : "GitHub",
+  'common.linkedin' : "LinkedIn",
   
 };
 

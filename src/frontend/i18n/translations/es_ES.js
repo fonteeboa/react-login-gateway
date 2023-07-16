@@ -50,7 +50,9 @@ const es_ES = {
   "dashboard.about.strong" : "Aquí puedes gestionar el acceso de los usuarios:",
   "dashboard.about" : "Iniciar y cerrar sesión, crear, editar y eliminar cuentas de usuario. El sistema registra todas las actividades, incluidos los intentos de inicio de sesión, con fines de auditoría.",
   "dashboard.welcome" : "Bienvenido al Sistema de Inicio de Sesión",
-  "dashboard.about.project" : "Sobre el Proyecto"
+  "dashboard.about.project" : "Sobre el Proyecto",
+  'common.github' : "GitHub",
+  'common.linkedin' : "LinkedIn",
   
 };
 

@@ -51,6 +51,8 @@ const pt_BR = {
   "dashboard.about" : " realizar login e logout, controle de contas de usuário. O sistema realiza auditoria das atividades do sistema,incluindo tentativas de login.",
   "dashboard.welcome" : "Bem-vindo ao Sistema de Login",
   "dashboard.about.project" : "Sobre o Projeto",
+  'common.github' : "GitHub",
+  'common.linkedin' : "LinkedIn",
   
 }
 
