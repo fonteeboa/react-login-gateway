@@ -42,6 +42,16 @@ const ja_JP = {
   "common.error_log": "エラーログ",
   "common.edit": "編集",
   "common.delete": "削除",
+  "dashboard.feedback" : "システムのすべての機能をご活用いただき、フィードバックや提案をお気軽にお寄せください！",
+  "dashboard.css.style.strong" : "各言語ごとのカスタムCSSスタイル：",
+  "dashboard.css.style" : "CSSの変更がユーザーエクスペリエンスに与える困難や影響を理解するための研究の一環として、各言語ごとにカスタムCSSスタイルが実装されています。",
+  "dashboard.lang.strong" : "システムは7つの異なる言語に対応しています：",
+  "dashboard.lang" : "ポルトガル語、英語、スペイン語、フランス語、ドイツ語、イタリア語、日本語。各言語には予測されるエラーの完全な翻訳が用意されています。",
+  "dashboard.about.strong" : "ユーザーアクセスを管理できます：",
+  "dashboard.about" : "ログイン、ログアウト、ユーザーアカウントの管理。システムは、ログイン試行を含むすべてのアクティビティを監査します。",
+  "dashboard.welcome" : "ログインシステムへようこそ",
+  "dashboard.about.project" : "プロジェクトについて"
+  
 };
 
 export default ja_JP;

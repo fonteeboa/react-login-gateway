@@ -42,6 +42,16 @@ const pt_BR = {
   "common.error_log": "Log de erros",
   "common.edit": "Editar",
   "common.delete": "Excluir",
+  "dashboard.feedback" : "Explore todas as funcionalidades do sistema e sinta-se à vontade para fornecer feedback e sugestões!",
+  "dashboard.css.style.strong" : "Estilos CSS personalizados para cada idioma:",
+  "dashboard.css.style" : " Foram implementados estilos CSS específicos para cada idioma, como parte de um estudo para entender as dificuldades e os impactos que as alterações de CSS podem ter na experiência do usuário.",
+  "dashboard.lang.strong" : "O sistema oferece suporte a 7 idiomas diferentes:",
+  "dashboard.lang" : " Português, Inglês, Espanhol, Francês, Alemão, Italiano e Japonês. Cada idioma possui traduções completas de erros previstos.",
+  "dashboard.about.strong" : "Aqui você pode gerenciar o acesso de usuários:",
+  "dashboard.about" : " realizar login e logout, controle de contas de usuário. O sistema realiza auditoria das atividades do sistema,incluindo tentativas de login.",
+  "dashboard.welcome" : "Bem-vindo ao Sistema de Login",
+  "dashboard.about.project" : "Sobre o Projeto",
+  
 }
 
 export default pt_BR;

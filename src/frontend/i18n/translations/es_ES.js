@@ -42,6 +42,16 @@ const es_ES = {
   "common.error_log": "Registro de errores",
   "common.edit": "Editar",
   "common.delete": "Eliminar",
+  "dashboard.feedback" : "¡Explora todas las funcionalidades del sistema y siéntete libre de proporcionar comentarios y sugerencias!",
+  "dashboard.css.style.strong" : "Estilos CSS personalizados para cada idioma:",
+  "dashboard.css.style" : "Se han implementado estilos CSS personalizados para cada idioma como parte de un estudio para comprender las dificultades y los impactos que los cambios de CSS pueden tener en la experiencia del usuario.",
+  "dashboard.lang.strong" : "El sistema ofrece soporte para 7 idiomas diferentes:",
+  "dashboard.lang" : "Portugués, inglés, español, francés, alemán, italiano y japonés. Cada idioma tiene traducciones completas de errores previstos.",
+  "dashboard.about.strong" : "Aquí puedes gestionar el acceso de los usuarios:",
+  "dashboard.about" : "Iniciar y cerrar sesión, crear, editar y eliminar cuentas de usuario. El sistema registra todas las actividades, incluidos los intentos de inicio de sesión, con fines de auditoría.",
+  "dashboard.welcome" : "Bienvenido al Sistema de Inicio de Sesión",
+  "dashboard.about.project" : "Sobre el Proyecto"
+  
 };
 
 export default es_ES;

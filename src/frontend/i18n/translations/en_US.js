@@ -42,6 +42,16 @@ const en_US = {
   "common.error_log": "Error log",
   "common.edit": "Edit",
   "common.delete": "Delete",
+  "dashboard.feedback" : "Explore all the features of the system and feel free to provide feedback and suggestions!",
+  "dashboard.css.style.strong" : "Custom CSS styles for each language:",
+  "dashboard.css.style" : "Custom CSS styles have been implemented for each language as part of a study to understand the difficulties and impacts that CSS changes can have on the user experience.",
+  "dashboard.lang.strong" : "The system supports 7 different languages:",
+  "dashboard.lang" : "Portuguese, English, Spanish, French, German, Italian, and Japanese. Each language has complete translations of anticipated errors.",
+  "dashboard.about.strong" : "Here you can manage user access:",
+  "dashboard.about" : "Perform login and logout, control user accounts. The system audits system activities, including login attempts.",
+  "dashboard.welcome" : "Welcome to the Login System",
+  "dashboard.about.project" : "About the Project"
+  
 };
 
 export default en_US;

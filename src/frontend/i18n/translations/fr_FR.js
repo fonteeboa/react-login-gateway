@@ -42,6 +42,16 @@ const fr_FR = {
   "common.error_log": "Journal des erreurs",
   "common.edit": "Modifier",
   "common.delete": "Supprimer",
+  "dashboard.feedback" : "Explorez toutes les fonctionnalités du système et n'hésitez pas à fournir des commentaires et des suggestions !",
+  "dashboard.css.style.strong" : "Styles CSS personnalisés pour chaque langue :",
+  "dashboard.css.style" : "Des styles CSS personnalisés ont été implémentés pour chaque langue dans le cadre d'une étude visant à comprendre les difficultés et les impacts que les modifications CSS peuvent avoir sur l'expérience utilisateur.",
+  "dashboard.lang.strong" : "Le système prend en charge 7 langues différentes :",
+  "dashboard.lang" : "Portugais, anglais, espagnol, français, allemand, italien et japonais. Chaque langue dispose de traductions complètes des erreurs prévues.",
+  "dashboard.about.strong" : "Vous pouvez gérer l'accès des utilisateurs :",
+  "dashboard.about" : "Connectez-vous, déconnectez-vous et gérez les comptes utilisateur. Le système enregistre toutes les activités, y compris les tentatives de connexion, à des fins d'audit.",
+  "dashboard.welcome" : "Bienvenue dans le système de connexion",
+  "dashboard.about.project" : "À propos du projet"
+  
 };
 
 export default fr_FR;

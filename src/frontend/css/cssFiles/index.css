@@ -61,3 +61,67 @@ body {
   width: 100%;
   height: 100%;
 }
+
+.rowBody {
+  display: flex;
+  align-items: center;
+}
+
+.dashboardContent {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.justifyContentCenter {
+  justify-content: center;
+}
+
+@media screen and (min-width: 600px) {
+  
+  .header {
+    padding-bottom: 4%;
+  }
+  
+  .paddingbot5 {
+    padding-bottom: 5%;
+  }
+  
+  .footer {
+    padding-top: 10% ;
+  }
+  
+  .footerMessage{
+    font-size: large;
+  }
+  
+  .titlebox {
+    position:relative 
+  }
+  
+  .leftBox {
+    width: 40%;
+    left: 8%;  
+  }
+
+  .boxSize {
+    min-height: 40% !important;
+    max-height: 40% !important;
+    height: 40% !important;
+  }
+
+  
+  .rightBox {
+    padding-left: 18% !important;
+    width: 40%;
+    left: 0%;  
+  }  
+  .footerIcon{
+    padding-left: 2%;
+  }
+  
+}
+
+@media screen and (max-width: 520px) {
+  
+}

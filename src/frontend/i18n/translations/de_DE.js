@@ -41,7 +41,17 @@ const de_DE = {
   "common.email": "E-Mail",
   "common.admin": "Administrator",
   "common.name": "Name",
-  "common.delete": "Löschen"
+  "common.delete": "Löschen",
+  "dashboard.feedback" : "Erkunden Sie alle Funktionen des Systems und geben Sie gerne Feedback und Vorschläge!",
+  "dashboard.css.style.strong" : "Individuelle CSS-Stile für jede Sprache:",
+  "dashboard.css.style" : "Es wurden individuelle CSS-Stile für jede Sprache implementiert, im Rahmen einer Studie, um die Schwierigkeiten und Auswirkungen von CSS-Änderungen auf die Benutzererfahrung zu verstehen.",
+  "dashboard.lang.strong" : "Das System unterstützt 7 verschiedene Sprachen:",
+  "dashboard.lang" : "Portugiesisch, Englisch, Spanisch, Französisch, Deutsch, Italienisch und Japanisch. Jede Sprache verfügt über vollständige Übersetzungen der erwarteten Fehler.",
+  "dashboard.about.strong" : "Hier können Sie den Benutzerzugriff verwalten:",
+  "dashboard.about" : "Melden Sie sich an und ab, kontrollieren Sie Benutzerkonten. Das System protokolliert alle Aktivitäten, einschließlich Anmeldeversuche, zu Auditierungszwecken.",
+  "dashboard.welcome" : "Willkommen im Anmeldesystem",
+  "dashboard.about.project" : "Über das Projekt"
+  
 };
 
 export default de_DE;
