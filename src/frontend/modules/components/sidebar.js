@@ -2,10 +2,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { menuItems } from '../constants/menuData';
 import { injectIntl } from "react-intl"
-import { GithubOutlined, LinkedinOutlined, LinkOutlined } from '@ant-design/icons';
+import { GithubOutlined, LinkedinOutlined, LinkOutlined, MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 
 
 class Sidebar extends React.Component {
@@ -13,6 +12,7 @@ class Sidebar extends React.Component {
     super(props);
     this.state = {
       collapsed: true,
+      language: sessionStorage.getItem('lang') || window.navigator.language.replace('-', '_') || 'pt_BR' ,
     };
   }
 
@@ -24,67 +24,85 @@ class Sidebar extends React.Component {
 
   renderMenuItem = (item) => {
     const { intl } = this.props;
+    const { label, icon, subMenu } = item;
+
+    const menuTitle = (
+      <span className="menu-title">
+        {this.renderMenuIcon(icon)}
+        {intl.formatMessage({ id: label })}
+      </span>
+    );
+
+    const subMenuList = subMenu && !this.state.collapsed && (
+      <ul className="submenu">
+        {subMenu.map(this.renderSubMenu)}
+      </ul>
+    );
+
     return (
       <li className='submenus'>
-        {this.renderMenuIcon(item.icon)}
-        {!this.state.collapsed && <span className="menu-title">{intl.formatMessage({ id:item.label})}</span>}
-        {item.subMenu && !this.state.collapsed && (
-          <ul className="submenu">{item.subMenu.map(this.renderSubMenu)}</ul>
-        )}
+        {!this.state.collapsed && menuTitle}
+        {subMenuList}
       </li>
     );
   };
 
   renderMenuIcon = (item) => {
-    return typeof item === 'string' ?	this.renderAntdIcon(item)  : <FontAwesomeIcon icon={item} className="menu-icon" />;
+    return typeof item === 'string' ?	this.renderAntdIcon(item)  : <FontAwesomeIcon icon={item} className={"menu-icon icon_" +  this.state.language}/>
   }
 
   renderAntdIcon = (item) => {
     switch(item) {
       case 'LinkedinOutlined':
-        return <LinkedinOutlined />
+        return <LinkedinOutlined className={"menu-icon icon_" +  this.state.language}/>
       case 'GithubOutlined':
-        return <GithubOutlined />
+        return <GithubOutlined className={"menu-icon icon_" +  this.state.language}/>
       case 'LinkOutlined':
-        return <LinkOutlined />
+        return <LinkOutlined className={"menu-icon icon_" +  this.state.language}/>
       default : 
-        return <FontAwesomeIcon icon={item} className="menu-icon" />
+        return <FontAwesomeIcon icon={item} className={"menu-icon icon_" +  this.state.language}/>
     }
   }
 
   renderSubMenu = (item) => {
     const { intl } = this.props;
+    const { label, external, route, icon } = item;
+
+    const submenuTitle = (
+      <>
+        {this.renderAntdIcon(icon)}
+        {intl.formatMessage({ id: label })}
+      </>
+    );
+
+    const submenuLink = external ? (
+      <a href={route} target="_blank" rel="noreferrer" className='submenu-title'>
+        {submenuTitle}
+      </a>
+    ) : (
+      <Link to={route} className='submenu-title'>
+        {!this.state.collapsed && submenuTitle}
+      </Link>
+    );
+
     return (
       <ul className="submenu">
-          <li key={item.label}>
-            { item.external ? 
-              <p className="footerIcon">
-                <a href={item.route} target="_blank" rel="noreferrer">
-                  {this.renderAntdIcon(item.icon)}
-                  {intl.formatMessage({ id:item.label})}
-                </a>
-              </p>            
-            :
-              <Link to={item.route}>
-                {!this.state.collapsed && <span className="submenu-title">{intl.formatMessage({ id:item.label})}</span>}
-              </Link>
-            }
-
-          </li>
+        <li key={label} >
+          <p>{submenuLink}</p>
+        </li>
       </ul>
     );
   };
  
 
   render() {
-    const sidebarClass = this.state.collapsed ? 'sidebar collapsed' : 'sidebar buildup';
+    const { language, collapsed } = this.state;
+    let  sidebarClass = 'border_' + language + ' sidebar ' + (collapsed ? 'collapsed' : 'buildup') + " background_" + language ;
+
     return (
-      <div className={sidebarClass + ' transition-all duration-200 ease-in justify-center items-center bg-[#223345]'}>
-        <button className="toggle-btn" onClick={this.toggleMenu}>
-          <FontAwesomeIcon
-            icon={(this.state.collapsed ? faAngleRight : faAngleLeft)}
-            className="toggle-icon"
-          />
+      <div className={sidebarClass + ' transition-all duration-200 ease-in justify-center items-center bg-[#223345] ' + language}>
+        <button className={"toggle-btn background_" + language} onClick={this.toggleMenu}>
+          {collapsed ? <MenuUnfoldOutlined className="toggle-icon" /> : <MenuFoldOutlined className="toggle-icon" />}
         </button>
         <ul className='menus'>{menuItems.map(this.renderMenuItem)}</ul>
       </div>

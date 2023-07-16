@@ -53,6 +53,7 @@ const de_DE = {
   "dashboard.about.project" : "Über das Projekt",
   'common.github' : "GitHub",
   'common.linkedin' : "LinkedIn",
+  "common.socialmedias" : "Soziale Medien"
   
 };
 

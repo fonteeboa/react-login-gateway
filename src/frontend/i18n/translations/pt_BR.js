@@ -53,6 +53,7 @@ const pt_BR = {
   "dashboard.about.project" : "Sobre o Projeto",
   'common.github' : "GitHub",
   'common.linkedin' : "LinkedIn",
+  "common.socialmedias" : "Redes Sociais",
   
 }
 

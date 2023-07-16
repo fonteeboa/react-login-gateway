@@ -53,6 +53,7 @@ const ja_JP = {
   "dashboard.about.project" : "プロジェクトについて",
   'common.github' : "GitHub",
   'common.linkedin' : "LinkedIn",
+  "common.socialmedias" : "ソーシャルメディア"
   
 };
 
